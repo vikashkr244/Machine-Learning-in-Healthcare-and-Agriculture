@@ -27,15 +27,6 @@ Machine-Learning-in-Healthcare-and-Agriculture/
 │
 └── tests/
 
-🚀 Features
-Feature	Healthcare	Agriculture
-Data Pipeline	✔️	✔️
-Synthetic Data Support	✔️	✔️
-ML Model Type	Logistic Regression	Random Forest
-Evaluation Metrics	Accuracy, Precision, Recall, F1	RMSE, MAE, R²
-API Support	✔️	✔️
-Streamlit UI	✔️	✔️
-Docker Deployment	✔️	✔️
 
 🔧 Installation & Setup
 1️⃣ Clone repository
