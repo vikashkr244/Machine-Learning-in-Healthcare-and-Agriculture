@@ -1,65 +1,75 @@
+🧠🌾 Machine Learning in Healthcare and Agriculture
+A production-oriented Machine Learning project applying predictive modeling to two critical domains:
+Healthcare – Risk prediction & health outcome analysis
+Agriculture – Crop yield / productivity prediction
+The project follows industry-standard ML pipelines, supports API deployment, and includes a web interface for real-time predictions.
+
+📂 Project Structure
 Machine-Learning-in-Healthcare-and-Agriculture/
 │
-├── README.md
-├── requirements.txt
-├── LICENSE
+├── README.md                  # Project documentation
+├── requirements.txt           # Python dependencies
+├── LICENSE                    # MIT License
 │
 ├── data/
-│   ├── healthcare/ (raw → cleaned → processed)
-│   ├── agriculture/ (raw → cleaned → processed)
-│   └── external/
+│   ├── healthcare/            # raw → cleaned → processed healthcare data
+│   ├── agriculture/           # raw → cleaned → processed agriculture data
+│   └── external/              # third-party or reference datasets
 │
-├── notebooks/
+├── notebooks/                 # EDA & experimentation notebooks
 │
 ├── src/
-│   ├── data_processing/
-│   ├── models/
-│   ├── evaluation/
-│   └── utils/
+│   ├── data_processing/       # preprocessing pipelines
+│   ├── models/                # ML model training logic
+│   ├── evaluation/            # metrics & evaluation scripts
+│   └── utils/                 # helper utilities
 │
-├── models/
-├── results/
+├── models/                    # saved trained models
+├── results/                   # evaluation outputs & plots
 │
 ├── deployment/
-│   ├── api/
-│   ├── webapp/
-│   └── docker/
+│   ├── api/                   # FastAPI backend
+│   ├── webapp/                # Streamlit frontend
+│   └── docker/                # Docker configuration
 │
-└── tests/
-
+└── tests/                     # unit & integration tests
 
 🔧 Installation & Setup
-1️⃣ Clone repository
+1️⃣ Clone the Repository
 git clone https://github.com/yourusername/Machine-Learning-in-Healthcare-and-Agriculture.git
 cd Machine-Learning-in-Healthcare-and-Agriculture
 
-2️⃣ Create Virtual Environment
+2️⃣ Create a Virtual Environment
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+Activate the environment:
+Linux / macOS
+source venv/bin/activate
+Windows
+venv\Scripts\activate
 
 3️⃣ Install Dependencies
 pip install -r requirements.txt
-
-🧪 Run Model Training
+🧪 Run Data Preprocessing & Model Training
+Preprocessing
 python -m src.data_processing.preprocess_healthcare
 python -m src.data_processing.preprocess_agriculture
-
+Model Training
 python -m src.models.healthcare_model
 python -m src.models.agriculture_model
 
 🌐 Run FastAPI Backend
 uvicorn deployment.api.fastapi_app:app --reload
 
+API Documentation:
+Swagger UI → http://127.0.0.1:8000/docs
+ReDoc UI → http://127.0.0.1:8000/redoc
 
-Swagger Docs → http://127.0.0.1:8000/docs
-Redoc UI → http://127.0.0.1:8000/redoc
 
-🖥️ Run Streamlit App
+🖥️ Run Streamlit Web App
 streamlit run deployment/webapp/app.py
 
 📡 API Request Examples
-🏥 Healthcare Request:
+🏥 Healthcare Prediction Request
 {
   "age": 55,
   "bmi": 30.2,
@@ -69,7 +79,7 @@ streamlit run deployment/webapp/app.py
   "diabetic": 1
 }
 
-🌾 Agriculture Request:
+🌾 Agriculture Prediction Request
 {
   "rainfall": 950,
   "temperature": 28,
@@ -79,52 +89,64 @@ streamlit run deployment/webapp/app.py
 }
 
 📊 Example Evaluation Results (Sample)
-Domain	Model	Score
+Domain	Model	Performance
 Healthcare	Logistic Regression	0.89 Accuracy
 Agriculture	Random Forest Regressor	0.91 R²
+🔁 Machine Learning Workflow
+┌───────────────────┐
+│   Raw Dataset     │
+└─────────┬─────────┘
+          │
+          ▼
+┌───────────────────────────────┐
+│   Data Preprocessing Pipeline │
+└──────────────┬────────────────┘
+               │
+               ▼
+┌───────────────────────────────┐
+│   Machine Learning Models     │
+└──────────────┬────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│ Deployment Layer (FastAPI + Streamlit) │
+└────────────────────────────────────────┘
 
-             ┌───────────────────┐
-             │ Raw Dataset       │
-             └───────┬───────────┘
-                     │
-                     ▼
-       ┌───────────────────────────────┐
-       │ Data Preprocessing Pipeline   │
-       └──────────────┬────────────────┘
-                      │
-                      ▼
-          ┌───────────────────────┐
-          │ Machine Learning Models│
-          └───────────┬───────────┘
-                      │
-                      ▼
-    ┌──────────────────────────────────────┐
-    │  Deployment Layer (FastAPI + UI)     │
-    └──────────────────────────────────────┘
 📌 Future Enhancements
-
-SHAP-based Explainable AI (XAI)
-
-Cloud deployment (AWS/GCP/Hugging Face)
-
-Model retraining automation
-
-Database-backed prediction history
+🔍 SHAP-based Explainable AI (XAI)
+☁️ Cloud deployment (AWS / GCP / Hugging Face)
+🔄 Automated model retraining
+🗄️ Database-backed prediction history
+📈 Monitoring & logging for production
 
 🙌 Credits
+Developed by: Vikash Kumar
 
-Developed by Vikash Kumar
+Tech Stack:
+Python
+Scikit-Learn
+FastAPI
+Streamli
+Docker
+NumPy
+Pandas
 
-Tools used: Python, Scikit-Learn, FastAPI, Streamlit, Docker, NumPy, Pandas
+MIT License
+Copyright (c) 2026 Vikash Kumar
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-📄 License
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-This project is licensed under the MIT License.
-
-⭐ If you like this project, consider giving it a star!
-
-Would you like:
-
-📁 A Project Report PDF (IEEE format)
-📊 A PPT Presentation
-🧪 A Jupyter Notebook Version
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
